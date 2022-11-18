@@ -1,0 +1,1 @@
+from .func import register_user, update_lang, key_lang_list, key_answer_update, get_answer, user_lang
