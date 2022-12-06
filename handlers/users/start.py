@@ -72,6 +72,7 @@ async def servoces_answer(msg: types.Message):
             reply_markup=back_btn(userLang))
         await Form.FIO.set()
     elif text == usertext[3]:
+        await msg.answer_location(latitude=42.423792, longitude=59.640935);
         await msg.answer(lang.get('adress').get(userLang))
     elif text == usertext[2]:
         await msg.answer(get_answer(text, userLang))
