@@ -35,6 +35,7 @@ def create_menu_table():
 );'''
     post_sql_query(query)
 create_menu_table()
+
 def register_user(user, username, first_name, last_name):
     user_check_query = f'SELECT * FROM USERS WHERE user_id = {user};'
     user_check_data = post_sql_query(user_check_query)
@@ -51,21 +52,17 @@ def update_lang(user_id, lang):
 
 
 def key_lang_list(user_id):
-    sql_query = f"SELECT lang FROM USERS WHERE user_id='{user_id}'"
-    user_lang = post_sql_query(sql_query)[0][0]
-    sql_query = f"SELECT * FROM menu WHERE lang='{user_lang}';"
+    sql_query = f"SELECT * FROM menu WHERE lang='kkkl'"
     return post_sql_query(sql_query)
 
-def key_answer_update(answer, cid):
-    sql_query = f"UPDATE menu set answer='{answer}' where id={cid}"
+def key_answer_update(answer, cid, lang):
+    sql_query = f"UPDATE menu set answer='{answer}' where type={cid} and lang='{lang}'"
     post_sql_query(sql_query)
 
-def get_answer(text):
-    sql = f"select answer from menu where name='{text}'"
-    print(sql)
+def get_answer(text, lang):
+    sql = f"select answer from menu where name='{text}' and lang='{lang}'"
     result = post_sql_query(sql)
-    print(result)
-    return result
+    return result[0][0]
 
 def user_lang(user_id):
     sql_query = f"SELECT lang FROM USERS WHERE user_id='{user_id}'"

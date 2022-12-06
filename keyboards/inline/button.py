@@ -19,18 +19,19 @@ def groupin_btn (user_id):
     InlineKeyboardButton("Отказано", callback_data=f"no={user_id}")
     )
 
-def murajat_btn(lang):
+def murajat_btn(user_lang):
+    text = lang.get('send_text').get(user_lang)
     return InlineKeyboardMarkup().add(
-        InlineKeyboardButton("Муражати жиберуди тастйқлау", callback_data="murajatOK")
+        InlineKeyboardButton(text[0], callback_data="murajatOK")
     ).add(
-        InlineKeyboardButton("Бийкралау", callback_data="murajatNO")
+        InlineKeyboardButton(text[1], callback_data="murajatNO")
     )
 
 
 def admin_btn(btn):
     markup = InlineKeyboardMarkup()
     for x in btn:
-        markup.add(InlineKeyboardButton(f"{x[1]}", callback_data=f"add={x[0]}")) 
+        markup.add(InlineKeyboardButton(f"{x[1]}", callback_data=f"add={x[4]}")) 
     return markup
 
 cencel_btn = InlineKeyboardMarkup().add( InlineKeyboardButton("cencel", callback_data='cencel') )

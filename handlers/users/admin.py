@@ -55,7 +55,12 @@ async def key_set_uzlt(msg: types.Message, state: FSMContext):
 async def key_set_uzlt(msg: types.Message, state: FSMContext):
     await state.update_data(ru=msg.text)
     data = await state.get_data()
-    userlang = user_lang(msg.from_id)
-    key_answer_update(data[f'{userlang}'], data['cid'])
+    print(data)
+    key_answer_update(data['kkkl'], data['cid'], 'kkkl')
+    key_answer_update(data['kklt'], data['cid'], 'kklt')
+    key_answer_update(data['uzkl'], data['cid'], 'uzkl')
+    key_answer_update(data['uzlt'], data['cid'], 'uzlt')
+    key_answer_update(data['ru'], data['cid'], 'ru')
+    
     await msg.answer("mag'lumat qosildi")
     await state.finish()
