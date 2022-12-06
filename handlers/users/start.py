@@ -18,7 +18,7 @@ async def bot_start(message: types.Message):
         message.from_user.username, 
         message.from_user.first_name, 
         message.from_user.last_name)
-    await message.answer("O'zin'izge qolay tildi tanlan':", reply_markup=lang_btn)
+    await message.answer("Выберите язык, который вам удобен:", reply_markup=lang_btn)
 
 @dp.callback_query_handler(lambda call: call.data == 'murajatOK')
 async def murjat_ok(call: types.CallbackQuery):
