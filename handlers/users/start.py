@@ -2,7 +2,8 @@ from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart
 from keyboards.inline import lang_btn, groupin_btn, murajat_btn
 from keyboards.default import services_btn, back_btn
-from utils.db_api import register_user, update_lang, get_answer
+from utils.db_api import register_user, update_lang, get_answer, user_lang
+from lang.message import lang
 from aiogram.dispatcher import FSMContext
 from states.form import Form
 from loader import dp, bot
@@ -11,12 +12,13 @@ import re
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
+    print(lang.get('menu').get(user_lang(message.from_id)))
     register_user(
         message.from_id, 
         message.from_user.username, 
         message.from_user.first_name, 
         message.from_user.last_name)
-    await message.answer("oziznizge qolay tildi tanlan':", reply_markup=lang_btn)
+    await message.answer("O'zin'izge qolay tildi tanlan':", reply_markup=lang_btn)
 
 @dp.callback_query_handler(lambda call: call.data == 'murajatOK')
 async def murjat_ok(call: types.CallbackQuery):
@@ -33,7 +35,7 @@ async def murjat_NO(call: types.CallbackQuery):
 async def set_lang (call: types.CallbackQuery):
     lang = call.data.split('=')[1]
     update_lang(call.from_user.id, lang)
-    await call.message.answer("menu", reply_markup=services_btn)
+    await call.message.answer("menu", reply_markup=services_btn(lang))
 
 @dp.callback_query_handler(lambda call: 'ok' in call.data)
 async def ok_question(call: types.CallbackQuery):
@@ -48,20 +50,24 @@ async def no_question(call: types.CallbackQuery):
     await bot.send_message(user_id, "Ҳүрметли пуқара сиздиң мүрәжатиниз бизлер арқалы шешилмейди. Муражатинизди тийсли макемелерге жиберунызды усинис етемиз", reply_markup=services_btn)
     await call.message.delete()
 
-@dp.message_handler(text='Arqaga', state='*')
+@dp.message_handler(lambda msg: msg.text == lang.get('back').get(user_lang(msg.from_id)), state='*')
 async def back_def(msg: types.Message, state: FSMContext):
-    await msg.answer("test", reply_markup=services_btn)
+    userLang = user_lang(msg.from_id)
+    usertext = lang.get('back_text').get(userLang)
+    await msg.answer(usertext, reply_markup=services_btn(userLang))
     await state.finish()
 
-@dp.message_handler(text=["Муражат етиу", "Канийгелер менен байлансиу", "Хизметлер", "Манзил"])
+@dp.message_handler(lambda msg: msg.text in lang.get('menu').get(user_lang(msg.from_id)))
 async def servoces_answer(msg: types.Message):
+    userLang = user_lang(msg.from_id)
+    usertext = lang.get('menu').get(userLang)
     text = msg.text
-    if text == 'Муражат етиу':
+    if text == usertext[0]:
         await msg.answer(
-        text="Familiya atinizdi kiritin",
-        reply_markup=back_btn)
+            text=lang.get('ques1').get(userLang),
+            reply_markup=back_btn(userLang))
         await Form.FIO.set()
-    elif text == 'Манзил':
+    elif text == usertext[3]:
         await msg.answer("Муражат №7 дизимге алинди. Пуқара (ФИО, Тел Номер) Муражат мазмуни")
     elif len(get_answer(text)) > 0:
         await msg.answer(get_answer(text))
@@ -70,17 +76,17 @@ async def servoces_answer(msg: types.Message):
 async def send_msg_group(msg: types.Message, state: FSMContext):
     await state.update_data(FIO=msg.text)
     await Form.next()
-    await msg.answer("telefon nomerinizdi kiritin", reply_markup=back_btn)
+    userLang = user_lang(msg.from_id)
+    usertext = lang.get('ques2').get(userLang)
+    await msg.answer(usertext, reply_markup=back_btn(userLang))
 
 @dp.message_handler(state=Form.PHONE)
 async def set_phone_number(msg: types.Message, state: FSMContext):
-    # regex = "^[\+]?(998)?([- (])?(90|91|93|94|95|98|99|33|97|71|75)([- )])?(\d{3})([- ])?(\d{2})([- ])?(\d{2})$"
-    # if re.search(regex, msg.text):
     await state.update_data(phone=msg.text)
     await Form.next()
-    await msg.answer("Murajatinizdi kiritin'", reply_markup=back_btn)
-    # else:
-    #     await msg.reply("Telefon nomer qate kiritili! uzbekistan nomerin kiritin':")
+    userLang = user_lang(msg.from_id)
+    usertext = lang.get('ques3').get(userLang)
+    await msg.answer(usertext, reply_markup=back_btn(userLang))
 
 @dp.message_handler(state=Form.MUAJAT)
 async def set_phone_number(msg: types.Message, state: FSMContext):

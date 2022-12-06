@@ -4,7 +4,7 @@ from time import ctime
 
 
 def post_sql_query(sql_query):
-    with sqlite3.connect('my.db') as connection:
+    with sqlite3.connect('./my.db') as connection:
         cursor = connection.cursor()
         try:
             cursor.execute(sql_query)
@@ -62,7 +62,10 @@ def key_answer_update(answer, cid):
 
 def get_answer(text):
     sql = f"select answer from menu where name='{text}'"
-    return post_sql_query(sql)[0][0]
+    print(sql)
+    result = post_sql_query(sql)
+    print(result)
+    return result
 
 def user_lang(user_id):
     sql_query = f"SELECT lang FROM USERS WHERE user_id='{user_id}'"
