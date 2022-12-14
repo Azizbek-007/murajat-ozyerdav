@@ -9,10 +9,9 @@ from states.form import Form
 from loader import dp, bot
 import re
 
-
-@dp.message_handler(CommandStart())
-async def bot_start(message: types.Message):
-    print(lang.get('menu').get(user_lang(message.from_id)))
+@dp.message_handler(CommandStart(), state='*')
+async def bot_start(message: types.Message, state: FSMContext):
+    await state.finish()
     register_user(
         message.from_id, 
         message.from_user.username, 
@@ -31,13 +30,13 @@ async def murjat_ok(call: types.CallbackQuery):
 async def murjat_NO(call: types.CallbackQuery):
     userLang = user_lang(call.from_user.id)
     await call.message.delete()
-    await call.message.answer("menu", reply_markup=services_btn(userLang))
+    await call.message.answer(lang.get('back_text').get(userLang), reply_markup=services_btn(userLang))
 
 @dp.callback_query_handler(lambda call: 'lang=' in call.data)
 async def set_lang (call: types.CallbackQuery):
-    lang = call.data.split('=')[1]
-    update_lang(call.from_user.id, lang)
-    await call.message.answer("menu", reply_markup=services_btn(lang))
+    Ulang = call.data.split('=')[1]
+    update_lang(call.from_user.id, Ulang)
+    await call.message.answer(lang.get('back_text').get(Ulang), reply_markup=services_btn(Ulang))
 
 @dp.callback_query_handler(lambda call: 'ok' in call.data)
 async def ok_question(call: types.CallbackQuery):
@@ -72,8 +71,10 @@ async def servoces_answer(msg: types.Message):
             reply_markup=back_btn(userLang))
         await Form.FIO.set()
     elif text == usertext[3]:
-        await msg.answer_location(latitude=42.423792, longitude=59.640935);
-        await msg.answer(lang.get('adress').get(userLang))
+        await msg.answer_photo(
+                "AgACAgIAAxkBAAIKP2OZtZRBjnmY6YeTAvAXkN90wFxdAALjwzEbgafQSMoDygNLc8smAQADAgADcwADLAQ",
+                caption=lang.get('job_day').get(userLang))
+        await msg.answer_location(latitude=42.423792, longitude=59.640935)
     elif text == usertext[2]:
         await msg.answer(get_answer(text, userLang))
     elif text == usertext[1]:

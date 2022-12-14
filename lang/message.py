@@ -16,59 +16,59 @@ lang = {
         "ru": ["Обращение", "Связаться с специалистом", "Услуги", "Адрес"]
     },
     "ques1": {
-        "kkkl": "Familiya atinizdi kiritin",
-        "kklt": "Familiya atinizdi kiritin",
-        "uzkl":"Familiya atinizdi kiritin",
-        "uzlt": "Familiya atinizdi kiritin", 
-        "ru": "Familiya atinizdi kiritin"
+        "kkkl": "Фамилия ҳәм атыңызды киритиң",
+        "kklt": "Familiya hám atıńızdı kiritiń",
+        "uzkl":"Фамилия ва исмингизни киритинг",
+        "uzlt": "Familiya va ismingizni kiriting", 
+        "ru": "Видите Фамилию и имя"
     },
     "ques2" : {
-        "kkkl": "telefon nomerinizdi kiritin",
-        "kklt": "telefon nomerinizdi kiritin",
-        "uzkl":"telefon nomerinizdi kiritin",
-        "uzlt": "telefon nomerinizdi kiritin", 
-        "ru": "telefon nomerinizdi kiritin"
+        "kkkl": "Телефон номериңизди киритиң",
+        "kklt": "Telefon nomerińizdi kiritiń",
+        "uzkl":"Телефон рақамингизни киритинг",
+        "uzlt": "Telefon raqamingizni kiriting", 
+        "ru": "Видите номер телефона"
     },
     "ques3" : {
-        "kkkl": "Murajatinizdi kiritin'",
-        "kklt": "Murajatinizdi kiritin'",
-        "uzkl":"Murajatinizdi kiritin'",
-        "uzlt": "Murajatinizdi kiritin'", 
-        "ru": "Murajatinizdi kiritin'"
+        "kkkl": "Мүрәжатыңызды киритиң",
+        "kklt": "Múrájatıńızdı kiritiń",
+        "uzkl":"Мурожаатингизни киритинг",
+        "uzlt": "Murojaatingizni kiriting", 
+        "ru": "Введите Ваше обращение"
     },
     "back" : {
-        "kkkl": "изге қайтиў",
-        "kklt": "izge qaytiw",
-        "uzkl":"Орқага",
-        "uzlt": "Orqaga", 
+        "kkkl": "Изге қайтыў",
+        "kklt": "Izge qaytıw",
+        "uzkl":"Орқага қайтиш",
+        "uzlt": "Orqaga qaytish", 
         "ru": "Назад"
     }, 
     "back_text" : {
-        "kkkl": "Backed",
-        "kklt": "Backed",
-        "uzkl":"Backed",
-        "uzlt": "Backed", 
-        "ru": "Backed"
+        "kkkl": "меню",
+        "kklt": "menyu",
+        "uzkl":"меню",
+        "uzlt": "menyu", 
+        "ru": "меню"
     },
     "send_text": {
         "kkkl": ["Мүрәжат жибериўди тастыйықлаў", "Бийкарлаў"],
         "kklt": ["Múrájat jiberiwdi tastıyıqlaw", "Biykarlaw"],
         "uzkl": ["Мурожаат юборишни тасдиқлаш", "Рад қилиш"],
         "uzlt": ["Murojaat yuborishni tasdiqlash", "Rad qilish"], 
-        "ru": ["Подтверждение отправки апелляции", "отказ"]
+        "ru": ["Подтверждение отправки обращения", "Отмена"]
     },
     "send_OK": {
-        "kkkl": "Ҳүрметли пуқара, Сизиң мүрәжатыӊыз бизлер арқалы шешилмейди. Мүрәжатыӊызды тийисли мекемелерге жибериўиӊизди усыныс етемиз.",
-        "kklt": "Húrmetli puqara, Siziń múrájatıńız bizler arqalı sheshilmeydi. Múrájatıńızdı tiyisli mekemelerge jiberiwińizdi usınıs etemiz.",
-        "uzkl":"Ҳурматли фуқаро, сизнинг мурожаатингиз кўрилмоқда. Тез орада мутахассислардан жавоб оласиз",
-        "uzlt": "Hurmatli fuqaro, sizning murojaatingiz ko'rilmoqda. Tez orada mutaxassislardan javob olasiz", 
-        "ru": "Уважаемый гражданин, ваше обращение рассматривается. Скоро вы получите ответ от специалистов"
+        "kkkl": "Ҳүрметли пуқара, Сизиң мүрәжатыӊызды тийисли тәртипте көрип шығылып, мүрәжатта көрсетилген мәселелер мекемиздиң ўәкиллигине кирмейтуғынлығы себебли тийисли мекемелерге жибериўиӊизди усыныс етемиз.",
+        "kklt": "Húrmetli puqara, Siziń múrájatıńızdı tiyisli tártipte kórip shıǵılıp, múrájatta kórsetilgen máseleler mekemizdiń wákilligine kirmeytuǵınlıǵı sebebli tiyisli mekemelerge jiberiwińizdi usınıs etemiz.",
+        "uzkl":"Ҳурматли фуқаро, Сизнинг мурожаатингизни тегишли тартибда кўриб чиқилиб, мурожаатда кўрсатилган масалалар бўлинмамизнинг ваколатига кирмаслиги сабабли тегишли идораларга юборишингизни таклиф қиламиз.",
+        "uzlt": "Hurmatli fuqaro, Sizning murojaatingizni tegishli tartibda koʻrib chiqilib, murojaatda koʻrsatilgan masalalar boʻlinmamizning vakolatiga kirmasligi sababli tegishli idoralarga yuborishingizni taklif qilamiz.", 
+        "ru": "Уважаемый гражданин, Ваше обращение (яки заявление) на рассмотрении. Ответ будет предоставлен в установленные сроки соответствующими специалистами."
     },
     "ok_job": {
-        "kkkl": "Сиздиң муражатиңиз қаралип шиғилмақта хам тез арада тийсли қəнегеликлер сизге жуўап береди",
-        "kklt": "Sizdiń murajatińiz qaralip shiǵilmaqta xam tez arada tiysli qánegelikler sizge juwap beredi",
-        "uzkl":"Сизнинг мурожаатингиз кўриб чиқилмоқда ва тегишли мутахассислар сизга жавоб беради",
-        "uzlt": "Sizning murojaatingiz ko'rib chiqilmoqda va tegishli mutaxassislar sizga javob beradi", 
+        "kkkl": "Ҳүрметли пуқара, Сизиң мүрәжатыӊыз көрип шығылмақда. Өз мүддетинде тийисли қәнийгелер жуўабын усынады.",
+        "kklt": "Húrmetli puqara, Siziń múrájatıńız kórip shıǵılmaqda. Óz múddetinde tiyisli qániygeler juwabın usınadı.",
+        "uzkl":"Ҳурматли фуқаро, Сизнинг мурожаатингиз кўриб чиқилмоқда. Ўз муддатида тегишли мутахассислардан жавоби тақдим қилинади.",
+        "uzlt": "Hurmatli fuqaro, Sizning murojaatingiz koʻrib chiqilmoqda. Oʻz muddatida tegishli mutaxassislardan javobi taqdim qilinadi.", 
         "ru": "Ваша апелляция рассматривается, и соответствующие эксперты ответят вам"
     },
     "no_job": {
@@ -76,7 +76,7 @@ lang = {
         "kklt": "Húrmetli puqara sizdiń múrájatiniz bizler arqalı sheshilmeydi. Murajatinizdi tiysli makemelerge jiberıwdı usinis etemiz",
         "uzkl":"Ҳурматли фуқаро сизнинг мурожаатингиз биз орқали ешилмайди. Мурожатингизни тегишли идораларга юборишингизни маслаҳат берамиз",
         "uzlt": "Hurmatli fuqaro sizning murojaatingiz biz orqali eshilmaydi. Murojatingizni tegishli idoralarga yuborishingizni maslahat beramiz", 
-        "ru": "Уважаемый гражданин, ваше обращение не будет услышано через нас. Мы советуем вам направить свое заявление в соответствующие органы"
+        "ru": "Уважаемый гражданин, информируем о том, что Ваше обращение (яки заявление) было рассмотрено в установленном порядке и в связи с не вхождением указанного в заявлении вопроса в компетенцию нашей организации, предлагаем направить Ваше обращение в соответствующие организации."
     },
     "adress": {
         "kkkl": "Әмиўдәрья районы\nШомуродов Наврўзбек: 998 99 546 98 40"
@@ -168,7 +168,28 @@ lang = {
             "\n\nЧимбайский районы\nТангирбергенов Рустам: 998 90 574 07 30"
             "\n\nШуманайский район\nБекназаров Айбек: 998 91 370 49 96"
             "\n\nЭлликкалинский район\nСабуров Жасурбек:998 97 789 95 23"
-
-    }
+    },
+    "job_day": {
+        "kkkl": "Жумыс күн тәртиби\nДүйсенбиден – жумаға шекем\n09:00 ден 18:00 ге шекем\nТүслик ўақты\n13:00 ден 14:00 ге шекем\nДема лыс күнлери\nШемби ҳәм екшемби",
+        "kklt": "Jumıs kún tártibi\nDúysenbiden – jumaǵa shekem\n09:00 den 18:00 ge shekem\nTúslik waqtı\n13:00 den 14:00 ge shekem\nDema lıs kúnleri\nShembi hám ekshembi",
+        "uzkl":'''
+Иш кун тартиби
+Душанбадан - жумагача
+09:00 дан 18:00 гача
+Тушлик вақти
+13:00 дан 14:00 гача
+Дам олиш кунлари  
+Шамба ва якшамба
+''',
+        "uzlt": '''
+Ish kun tartibi
+Dushanbadan - jumagacha
+09:00 dan 18:00 gacha
+Tushlik vaqti
+13:00 dan 14:00 gacha
+Dam olish kunlari  
+Shamba va yakshamba''', 
+        "ru": "Backed"
+    } 
 
 }
