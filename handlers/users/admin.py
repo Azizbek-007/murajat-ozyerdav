@@ -31,7 +31,7 @@ async def add_key_for_text(call: types.CallbackQuery, state: FSMContext):
 async def key_set_kkkl(msg: types.Message, state: FSMContext):
     await state.update_data(kkkl=msg.text)
     await TextForm.next()
-    await msg.answer("araqalpaq tilindegi latin alfabetinde kiritin':", reply_markup=cencel_btn)
+    await msg.answer("Qaraqalpaq tilindegi latin alfabetinde kiritin':", reply_markup=cencel_btn)
 
 @dp.message_handler(state=TextForm.kklt)
 async def key_set_kklt(msg: types.Message, state: FSMContext):
