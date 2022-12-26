@@ -10,10 +10,10 @@ async def hello_Admin(msg: types.Message):
     btn = key_lang_list(msg.from_id)
     await msg.answer("Hello admin", reply_markup=admin_btn(btn))
 
-@dp.callback_query_handler(lambda call: call.data == 'cencel')
+@dp.callback_query_handler(lambda call: call.data == 'cencel', state='*')
 async def cencell(call: types.CallbackQuery, state: FSMContext):
     await state.finish()
-    await call.answer()
+    await call.message.delete()
     await call.message.answer("biykar etildi")
     btn = key_lang_list(call.from_user.id)
     await call.message.answer("Hello admin", reply_markup=admin_btn(btn))
@@ -55,12 +55,10 @@ async def key_set_uzlt(msg: types.Message, state: FSMContext):
 async def key_set_uzlt(msg: types.Message, state: FSMContext):
     await state.update_data(ru=msg.text)
     data = await state.get_data()
-    print(data)
     key_answer_update(data['kkkl'], data['cid'], 'kkkl')
     key_answer_update(data['kklt'], data['cid'], 'kklt')
     key_answer_update(data['uzkl'], data['cid'], 'uzkl')
     key_answer_update(data['uzlt'], data['cid'], 'uzlt')
     key_answer_update(data['ru'], data['cid'], 'ru')
-    
     await msg.answer("mag'lumat qosildi")
     await state.finish()
