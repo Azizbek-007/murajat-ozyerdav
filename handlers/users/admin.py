@@ -1,11 +1,11 @@
 from aiogram import types
-from loader import dp, bot
+from loader import dp, bot, admins
 from keyboards.inline import admin_btn, cencel_btn
 from utils.db_api import key_lang_list, key_answer_update, user_lang
 from states import TextForm
 from aiogram.dispatcher import FSMContext
 
-@dp.message_handler(commands=['admin'])
+@dp.message_handler(commands=['admin'], user_id=admins)
 async def hello_Admin(msg: types.Message):
     btn = key_lang_list(msg.from_id)
     await msg.answer("Hello admin", reply_markup=admin_btn(btn))
