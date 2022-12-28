@@ -9,6 +9,10 @@ from states.form import Form
 from loader import dp, bot
 import re
 
+# @dp.message_handler(content_types=['photo'])
+# async def get_file_id(msg: types.Message):
+#     print(msg)
+
 @dp.message_handler(CommandStart(), state='*')
 async def bot_start(message: types.Message, state: FSMContext):
     await state.finish()
@@ -72,7 +76,7 @@ async def servoces_answer(msg: types.Message):
         await Form.FIO.set()
     elif text == usertext[3]:
         await msg.answer_photo(
-                "AgACAgIAAxkBAAIKP2OZtZRBjnmY6YeTAvAXkN90wFxdAALjwzEbgafQSMoDygNLc8smAQADAgADcwADLAQ",
+                "AgACAgIAAxkBAANgY6vQKX6ptwVR8Jy1R2wsDOdW_wwAAmLBMRt6eWBJixsdgbR-dYYBAAMCAAN5AAMsBA",
                 caption=lang.get('job_day').get(userLang))
         await msg.answer_location(latitude=42.423792, longitude=59.640935)
     elif text == usertext[2]:
